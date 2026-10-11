@@ -144,7 +144,6 @@
       p.position.z += p.userData.v * dt; p.rotation.y += p.userData.spin * dt;
       if (p.position.z > 6) respawn(p, rnd(-115, -90));
     });
-
     // shooting stars
     shoots.forEach(l => {
       const u = l.userData;
@@ -154,7 +153,6 @@
         if (u.life <= 0) { l.material.opacity = 0; u.wait = rnd(2, 7); }
       } else if ((u.wait -= dt) <= 0) { u.life = 1.2; l.position.set(rnd(-2, 12), rnd(2, 7), -6); }
     });
-
     camera.position.x += (mx * 0.8 - camera.position.x) * 0.04;
     camera.position.y += (-my * 0.5 - camera.position.y) * 0.04;
     camera.lookAt(0, 0, 0);
